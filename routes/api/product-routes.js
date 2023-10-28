@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
       },
       {
         model: Tag,
+        through: ProductTag
       },
     ],
   })
@@ -36,6 +37,7 @@ router.get("/:id", (req, res) => {
       },
       {
         model: Tag,
+        through: ProductTag
       },
     ],
   })
@@ -131,6 +133,20 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then((dbData)=> {
+    if(!dbData){
+        return res.status(400).json({
+            message: 'Invalid id, no product found!'
+        })
+    }
+    res.json(dbData);
+}) .catch((error) => {
+    res.status(500).json(error);
+  });
 });
 
 module.exports = router;

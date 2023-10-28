@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
   })
     .then((dbData) => {
     if(!dbData){
-        return res.status(400).json({
+        return res.status(404).json({
             message: 'Invalid id, no category found!'
         })
     }
