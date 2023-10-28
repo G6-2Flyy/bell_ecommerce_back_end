@@ -26,7 +26,7 @@ The purpose of this project is to build the back end for an e-commerce site. Thi
 
 ## Usage
 
-Link to video recording: 
+Link to video recording: https://drive.google.com/file/d/1MlB0MD7Yk9j3Bzp3zZ81B89Swxfw3K7n/view
 
 ![alt text](assets/images/e_commerce_back_end_screenshot.png)
 
